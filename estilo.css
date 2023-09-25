@@ -1,0 +1,262 @@
+:root {
+    --primary-color: #e6eaef;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'segoe ui';
+}
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  -webkit-appearance:none;
+} 
+
+button {
+    background: none;
+    border: none;
+}
+
+body {
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    margin: 0px;
+    background-image: url("assets/background.png");
+    overflow-x: hidden;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+
+.pokedex {
+    margin-top: 100px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 50px;
+    margin-bottom: 50px;
+}
+
+.pokemon {
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background: rgb(230, 230, 250);
+    padding: 30px 20px;
+    width: 280px;
+    height: 370px;
+    border-radius: 25px;
+    transition: .1s ease-in;
+}
+
+.pokemon:hover {
+    background: rgb(50, 50, 50);
+    transform: scale(115%);
+}
+
+
+.pokemon:hover .shade {
+    border-radius: 0px;
+    top: -10px;
+}
+
+.pokemon:hover img {
+    transform: scale(20%) translateY(500px);
+    opacity: 0;
+}
+
+.pokemon:hover .types {
+    margin-top: 80px;
+    margin-bottom: -30px;
+}
+
+.pokemon:hover .hp {
+    top: 500px;
+    border-radius: 0px;
+    opacity: 0;
+}
+
+.pokedex .pokemon:hover .desc {
+    visibility: visible;
+    top: 0;
+    padding: 20px 20px;
+
+}
+
+.pokemon:hover .stats span {
+    color: white;
+}
+
+.pokedex .pokemon .desc {
+    color: white;
+    transition: .15s ease;
+    visibility: hidden;
+    position: absolute;
+    top: -500px;
+    font-size: 22px;
+    padding: 5px 5px;
+}
+
+.pokemon:has(.bug) {
+    box-shadow: rgba(250, 250, 251, 0.8) 0px 10px 80px -80px, rgba(100, 100, 100, 0.8) 0px 30px 10px -30px, rgba(157, 207, 107, 0.1) 0px -10px 10px 0px inset;
+}
+
+.pokemon:has(.grass) {
+    box-shadow: rgba(250, 250, 251, 0.8) 0px 10px 80px -80px, rgba(100, 100, 100, 0.8) 0px 30px 10px -30px, rgba(57, 207, 57, 0.1) 0px -10px 10px 0px inset;
+}
+
+.pokemon:has(.electric) {
+    box-shadow: rgba(250, 250, 251, 0.8) 0px 10px 80px -80px, rgba(100, 100, 100, 0.8) 0px 30px 10px -30px, rgba(207, 207, 0, 0.1) 0px -10px 10px 0px inset;
+}
+
+.pokemon:has(.fire) {
+    box-shadow: rgba(250, 250, 251, 0.8) 0px 10px 80px -80px, rgba(100, 100, 100, 0.8) 0px 30px 10px -30px, rgba(207, 57, 0, 0.1) 0px -10px 10px 0px inset;
+}
+
+.pokemon:has(.ghost) {
+    box-shadow: rgba(250, 250, 251, 0.8) 0px 10px 80px -80px, rgba(100, 100, 100, 0.8) 0px 30px 10px -30px, rgba(107, 57, 107, 0.1) 0px -10px 10px 0px inset;
+}
+
+.pokemon:has(.water) {
+    box-shadow: rgba(250, 250, 251, 0.8) 0px 10px 80px -80px, rgba(100, 100, 100, 0.8) 0px 30px 10px -30px, rgba(7, 57, 107, 0.1) 0px -10px 10px 0px inset;
+}
+
+.pokemon .shade {
+    transition: .05s ease-in;
+    position: absolute;
+    top: -150px;
+    border-radius: 50%;
+    width: 500px;
+    height: 300px;
+}
+
+.pokemon  .shade.water {
+    background-color: rgb(0, 150, 220);
+}
+
+.pokemon  .shade.electric {
+    background-color: rgb(230, 180, 0);
+}
+
+.pokemon  .shade.fire {
+    background-color: rgb(200, 50, 50);
+}
+
+.pokemon  .shade.ghost {
+    background-color: rgb(100, 50, 150);
+}
+
+.pokemon  .shade.grass {
+    background-color: rgb(50, 150, 50);
+}
+
+.pokemon .shade.bug {
+    background-color: rgb(80, 120, 50);
+}
+
+.pokemon img {
+    transition: .2s ease-in;
+    z-index: 1;
+    width: 180px;
+}
+
+.pika img {
+    transform: translateY(20px);
+}
+
+.hp {
+    transition: .2s ease;
+    position: absolute;
+    top: 0;
+    right: 10px;
+    margin-top: 10px;
+    width: 20%;
+    padding: 5px 10px;
+    text-align: center;
+    height: 20px;
+    border-radius: 25px;
+    background: rgb(230, 230, 250);
+}
+
+.hp span:first-child {
+    font-weight: bold;
+}
+
+.pokemon .nome {
+    margin-top: 25px;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.types {
+    transition: .2s ease-in-out;
+    margin-top: 50px;
+}
+
+.types span {
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+    padding: 5px 12px;
+    margin: 0 10px;
+    border-radius: 25px;
+    background: darkcyan;
+    color: white;
+    font-weight: bold;
+}
+
+
+.types.bug span {
+    background-color: rgb(80, 120, 50);
+}
+
+.types.grass span {
+    background-color: rgb(50, 150, 50);
+}
+
+.types.water span {
+    background: rgb(0, 150, 220);
+}
+
+.types.fire span {
+    background: rgb(200, 50, 50);
+}
+
+.types.electric span {
+    background: rgb(240, 220, 00);
+}
+
+.types.ghost span {
+    background: rgb(100, 50, 150);
+}
+
+.types.ghost span {
+    background: rgb(50, 25, 100);
+}
+
+.stats {
+    transition: .2s ease;
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-around;
+    gap: 45px;
+    text-align: center;
+}
+
+.stats span:first-child {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.stats span:last-child {
+    color: rgb(70, 70, 100);
+}
+
