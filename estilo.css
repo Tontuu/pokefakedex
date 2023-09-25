@@ -35,12 +35,13 @@ body::-webkit-scrollbar {
 
 
 .pokedex {
-    margin-top: 100px;
+    margin-top: 40px;
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
     gap: 50px;
     margin-bottom: 50px;
+    padding-bottom: 40px;
 }
 
 .pokemon {
@@ -179,11 +180,11 @@ body::-webkit-scrollbar {
     position: absolute;
     top: 0;
     right: 10px;
-    margin-top: 10px;
+    margin-top: 18px;
     width: 20%;
     padding: 5px 10px;
     text-align: center;
-    height: 20px;
+    height: 24px;
     border-radius: 25px;
     background: rgb(230, 230, 250);
 }

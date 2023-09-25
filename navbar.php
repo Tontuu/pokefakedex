@@ -4,22 +4,24 @@
         height: 50px;
         width: 100%;
         background-color: rgba(255,255,255,0.4);
-        position: relative;
         box-shadow: 0px 0px 8px 1px rgba(0,0,0,0.2);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
 
     .nav .nav-header {
-        width: 600px;
-        position: absolute;
+        width: 100%;
         display: flex;
         flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
         padding: 10px 10px;
     }
 
     /* SEARCH BAR */
     .nav-header form {
         position: relative;
-        margin-left: 10%;
         width: 40vw;
         background: var(--primary-color);
         border-radius: .7rem;
@@ -87,7 +89,6 @@
     }
 
     .nav .nav-header .nav-title {
-        margin-left: 10px;
         border-radius: 10px;
         font-size: 22px;
         display: inline-block;
@@ -101,65 +102,29 @@
     }
 
     .nav .nav-links {
-        display: inline;
-        font-size: 18px;
-        margin: 0;
-        padding: 0;
+        height: 100%;
+        font-size: 14pt;
+        display: flex;
+        list-style: none;
     }
 
-    .nav .nav-links .nav-link {
-        display: inline-block;
+    .nav .nav-links li {
+        padding: 0 10px;
+    }
+
+    .nav .nav-links a {
         text-decoration: none;
-        color: rgb(10, 10, 40);
-        transition: .2s ease-in;
+        color: black;
     }
 
     .nav .nav-links a:hover {
-        color: white;
-        background-color: rgba(0, 0, 0, 0.6);
+        height: 100%;
+        width: 100%;
+        color: #1f1f1f;
     }
 
-    .nav .nav-links .pika:hover {
-        color: black;
-        background-color: rgba(200, 200, 0, 0.2);
-    }
-
-    .nav .nav-links .charmander:hover {
-        color: black;
-        background-color: rgba(200, 0, 0, 0.2);
-    }
-
-    .nav .nav-links .mimikyu:hover {
-        color: black;
-        background-color: rgba(87, 57, 150, 0.2);
-    }
-
-    .nav #nav-check {
-        display: none;
-    }
 
 @media (max-width:800px) {
-    .nav .nav-links .pika:hover {
-        color: white;
-        background-color: rgba(200, 200, 0, 0.2);
-    }
-
-    .nav .nav-links .charmander:hover {
-        color: white;
-        background-color: rgba(200, 0, 0, 0.2);
-    }
-
-    .nav .nav-links .mimikyu:hover {
-        color: white;
-        background-color: rgba(87, 57, 150, 0.2);
-    }
-
-
-    .nav .nav-links .nav-link {
-        color: white;
-        font-weight: bold;
-    }
-
     .nav .nav-btn {
         display: inline-block;
         position: absolute;
@@ -181,37 +146,11 @@
         height: 10px;
         border-top: 2px solid black;
     }
-    .nav .nav-links {
-        background-color: rgba(0,0,0,0.40);
-        height: 0px;
-        transition: all 0.1s ease;
-        overflow-y: hidden;
-        left: 0;
-        z-index: 1; 
-        margin-top: -40px
-    }
-
-    .nav .nav-links a:hover {
-        background-color: rgba(0,0,0,0.1); /* Added a subtle hover effect */
-    }
     .nav .active {
         height: 100vh;
         width: 100vw;
         padding: 0;
         margin: 0;
-    }
-
-    .nav .nav-link {
-        color: white;
-        padding: 10px;
-        margin: 50px 0;
-        display: block;
-        font-size: 24px; 
-        transition: background-color 0.3s; 
-        border-radius: 4px;
-        background: none;
-        text-align: left;
-        border-radius: 5px;
     }
 }
 
@@ -220,7 +159,6 @@
 
 
 <div class="nav">
-    <input type="checkbox" id="nav-check">
     <div class="nav-header">
         <div class="nav-title">
             <a href="#">Pokemon</a>
@@ -231,6 +169,11 @@
             <button type="submit">🔍</button>
         </form>
 
+        <ul class="nav-links">
+            <li><a href="#" target="_self">Home</a></li>
+            <li><a href="#" target="_self">Adicionar</a></li>
+            <li><a href="#" target="_self">Excluir</a></li>
+        </ul>
     </div>
     <div class="nav-btn">
         <button type="submit" class="nav-check">
@@ -240,12 +183,6 @@
         </button>
     </div>
 
-    <div class="nav-links">
-        <a class="nav-link" href="#" target="_blank">Home</a>
-        <a class="nav-link pika" href="#" target="_blank">Adicionar</a>
-        <a class="nav-link charmander" href="#" target="_blank">Alterar</a>
-        <a class="nav-link mimikyu" href="#" target="_blank">Excluir</a>
-    </div>
 </div>
 
 
