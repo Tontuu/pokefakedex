@@ -50,7 +50,8 @@
                         $connection,
                         "SELECT nome FROM `tipos`
                          WHERE id = $type_id1;" )->fetch_assoc()['nome'];
-                    echo "<div class='pokemon bulbasaur'>";
+                    echo "<a href='pokemon.php?nome=" . strtolower($name) . "'>";
+                    echo "<div class='pokemon'>";
                         echo "<div class='shade $type_str'></div>";
 
                         echo "<div class='hp'>";
@@ -85,12 +86,21 @@
                             echo "</div>";
                         echo "</div>";
                     echo "</div>";
+                    echo "</a>";
                 }
                 mysqli_close($connection);
             ?>
             
 
-        </div>
+            <script>
+                document.querySelectorAll(".pokemon").forEach((x) => {
+                        x.addEventListener("click", (y) => {
+                        console.log("Clicado em: " + y);
+                        console.log(y);
+                    })
+                })
+            </script>
+    </div>
 
 </body>
 

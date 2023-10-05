@@ -1,3 +1,8 @@
+@font-face {
+    font-family: 'Pixel';
+    src: url('./assets/dogica.ttf');
+}
+
 :root {
     --primary-color: #e6eaef;
 }
@@ -5,7 +10,16 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: 'segoe ui';
+    font-family: 'Segoe UI';
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+a .pokemon {
+    color: black;
 }
 
 input[type="search"]::-webkit-search-decoration,
@@ -141,28 +155,10 @@ body::-webkit-scrollbar {
     height: 300px;
 }
 
-.pokemon .shade.water {
-    background-color: rgb(0, 150, 220);
-}
 
-.pokemon .shade.electric {
-    background-color: rgb(230, 180, 0);
-}
-
-.pokemon .shade.fire {
-    background-color: rgb(200, 50, 50);
-}
 
 .pokemon .shade.ghost {
     background-color: rgb(100, 50, 150);
-}
-
-.pokemon .shade.grass {
-    background-color: rgb(50, 150, 50);
-}
-
-.pokemon .shade.bug {
-    background-color: rgb(80, 120, 50);
 }
 
 .pokemon img {
@@ -215,9 +211,6 @@ body::-webkit-scrollbar {
 }
 
 
-.types.bug span {
-    background-color: rgb(80, 120, 50);
-}
 
 .types.grass span {
     background-color: rgb(50, 150, 50);
@@ -263,7 +256,7 @@ body::-webkit-scrollbar {
 
 
 .nav {
-    z-index: 99;
+    z-index: 100;
     height: 50px;
     width: 100%;
     background-color: rgba(255, 255, 255, 0.4);
@@ -467,59 +460,196 @@ body::-webkit-scrollbar {
 }
 
 
-
 .summary {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     overflow: hidden;
-    background-color: #38b5cb;
-    margin: 10px auto 10px auto;
     width: 95vw;
-    border-radius: 25px;
-    height: 90vh;
+    height: 82vh;
+    margin: 10px auto auto auto;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-    align-items: center;
     padding: 20px;
 }
 
-.summary .top-container {
+.summary p, .summary a, .summary span, .summary h1, .summary div {
+    font-family: "Pixel";
+}
+
+.summary .top {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.summary .top .info {
+    width: 40%;
     display: flex;
     flex-direction: column;
-    justify-content: start;
     align-items: center;
-    height: 50vh;
 }
 
-a {
-    text-decoration: none;
-    color: white;
+.summary .top .info .info-title {
+    width: 100%;
+    height: 80px;
 }
 
-.summary .top-container .head {
+.summary .top .top-info, .summary .top .bottom-info {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 50%;
+    border: 2px solid black;
+}
+
+.summary .top .top-info {
+    background: red;
+    border-bottom: 0;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.summary .top .bottom-info {
+    background: white;
+    border-top: 0;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.top .bottom-info, .top .top-info {
+    padding: 5px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: left;
+}
+
+.top .top-info span {
+    margin-left: 10px;
+}
+
+.summary .top .types {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 20%;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.summary .top .types div {
+    background: white;
+    padding: 20px 40px;
+    border: 4px solid black;
+    border-radius: 8px;
+}
+
+.summary .top .sprite {
+    transform: scale(1.3);
+    width: 250px;
+    height: 250px;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+}
+
+.summary .top .summary-stats {
+    box-sizing: border-box;
+    border-radius: 8px;
+    border: 4px solid black;
+    width: 100%;
+    background: white;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+}
+
+.summary .top .poke-stats {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 100%;
+}
+.summary .top .poke-stats div {
+    padding: 8px 0px;
     display: flex;
     justify-content: space-between;
-    width: 100%;
-    font-size: 18pt;
-    color: white;
-    font-weight: bold;
 }
 
-.summary .top-container img {
-    transform: scale(1.1) translateY(2.6em);
-    z-index: 1;
-}
-
-.summary .bottom-container {
-    height: 50%;
+.summary .bottom {
+    overflow: hidden;
     display: flex;
-    justify-content: center;
-    border-top-left-radius: 45px;
-    border-top-right-radius: 45px;
-    background-color: #fafafa;
-    border-radius: 50px;
-    width: 120%;
-    transform: translateX(-8.5%);
+    background: white;
+    width: 100%;
+    font-size: 32pt;
+    border: 4px solid black;
+    border-radius: 8px;
 }
 
-.summary .bottom-container h1 {
-    margin-top: 2.2rem;
-    font-size: 30pt;
+.summary .red-padd {
+    box-sizing: border-box;
+    box-shadow: 0 -4px 6px 8px rgba(255, 0, 0, 0.2);
+    background: red;
+    width: 5%;
+}
+
+.summary .summary-stats .red-padd {
+    width: 3%;
+}
+
+.summary .botton .desc {
+    height: auto;
+}
+.summary .bottom p {
+    font-size: 1.0rem;
+    line-height: 35pt;
+    margin: 10px 20px;
+}
+
+/* SUMMARY CORES */
+
+/* GRAMA */
+
+
+.pokemon .shade.grass, .summary.grass .top .top-info, .summary.grass .red-padd {
+    background-color: rgb(50, 150, 50);
+}
+.summary.grass .red-padd {
+    box-shadow: 0 -4px 6px 8px rgba(0, 255, 0, 0.2);
+}
+
+/* FOGO */
+.pokemon .shade.fire, .summary.fire .top .top-info, .summary.fire .red-padd {
+    background-color: rgb(200, 50, 50);
+}
+.summary.fire .red-padd {
+    box-shadow: 0 -4px 6px 8px rgba(255, 0, 0, 0.2);
+}
+
+/* AGUA */
+.pokemon .shade.water, .summary.water .top .top-info, .summary.water .red-padd {
+    background-color: rgb(0, 150, 220);
+}
+.summary.water .red-padd {
+    box-shadow: 0 -4px 6px 8px rgba(0, 0, 255, 0.2);
+}
+
+/* INSETO */
+.pokemon .shade.bug, .summary.bug .top .top-info, .summary.bug .red-padd {
+    background-color: rgb(80, 120, 50);
+}
+.summary.bug .red-padd {
+    box-shadow: 0 -4px 6px 8px rgba(0, 155, 0, 0.2);
+}
+
+/* ELETRICO */
+.pokemon .shade.electric, .summary.electric .top .top-info, .summary.electric .red-padd {
+    background-color: rgb(230, 180, 0);
+}
+.summary.electric .red-padd {
+    box-shadow: 0 -4px 6px 8px rgba(230, 180, 0, 0.2);
 }

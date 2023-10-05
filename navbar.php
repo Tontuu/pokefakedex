@@ -29,7 +29,7 @@
 <div class="nav">
     <div class="nav-header">
         <div class="nav-title">
-            <a href="#">Pokemon</a>
+            <a href="./pokemoooooooon.php">Pokemon</a>
         </div>
         <form action="pokemon.php" method="get">
             <label for="search">Search for stuff</label>
@@ -53,7 +53,7 @@
         </form>
 
         <ul class="nav-links">
-            <li><a href="#" target="_self">Home</a></li>
+            <li><a href="./pokemoooooooon.php" target="_self">Home</a></li>
             <li><a href="#" target="_self">Adicionar</a></li>
             <li><a ref="#" target="_self">Excluir</a></li>
         </ul>
