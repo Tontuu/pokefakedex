@@ -23,7 +23,7 @@
                 echo "</style>";
                 $connection = mysqli_connect("localhost", "root", '', "pokedex");
                 if (!$connection) {
-                    die("Não foi possivel conectar na database: " . mysqli_error());
+                    die("Não foi possivel conectar na database: " . mysqli_error($connection));
                 }
                 $pokemon_result = mysqli_query($connection, "SELECT * FROM pokemons ORDER BY id ASC");
 
